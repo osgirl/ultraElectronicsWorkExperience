@@ -10,6 +10,8 @@ body{
 
 #div_1, #div_2, #div_3, #div_4, #div_5, #div_6, #div_7, #div_8, #div_9 {
 	position: relative;
+	top: 50%;
+	transform: translateY(50%);
     float: left;
     width: 200px;
     height: 200px;
@@ -18,5 +20,7 @@ body{
 }
 
 #container{
+	margin: auto;
 	width: 700px;
+	vertical-align: center;
 }

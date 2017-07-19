@@ -1,4 +1,4 @@
-function drag(ev){
+/*function drag(ev){
     ev.dataTransfer.setData("text", ev.target.id)
 }
 
@@ -10,8 +10,8 @@ function drop(ev){
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-}
+}*/
 
-function onClick(ev){
-    
+function onClick(obj){
+    obj.innerHTML = "<img src='nought.png' height='200px' width='200px'/>"
 }
