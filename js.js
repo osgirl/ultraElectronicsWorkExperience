@@ -3,37 +3,46 @@ var noughtOrCross = {
     cross: "cross"
 };
 
-var rows = ["", "", ""]; var x;
-var columns = ["", "", ""]; var y;
+var x;
+var y;
 
 var grid = [
     [false, false, false],
     [false, false, false],
     [false, false, false]
-] 
+]
 
-var occupied = true;
+var occupied;
 var state;
-var isGame = false;
+var gamecount = 0;
+var isGame = true;  //set to false later
+var gameOver = false;
 
 function onClick(obj) {
     coordinates(obj);
     checkOccupied();
-    if (isGame == true && this.occupied == false) {
+    if (isGame == true && this.occupied == false && gameOver == false) {
         if (this.state == noughtOrCross.nought) {
+
             obj.innerHTML = "<img src='nought.png' height='200px' width='200px'/>";
             this.state = noughtOrCross.cross;
 
-            rows[x - 1] = "nought"; columns[y - 1] = "nought";
+            grid[y - 1][x - 1] = "o";
         }
         else {
             obj.innerHTML = "<img src='cross.png' height ='200px' width='200px'/>";
             this.state = noughtOrCross.nought;
 
-            rows[x - 1] = "cross"; columns[y - 1] = "cross";
+            grid[y - 1][x - 1] = "x";
         }
     }
-    occupied = true;
+    else{
+        alert("Game is Over");
+    }
+    gamecount++;
+    if (gamecount >= 9) {
+        gameOver = true;
+    }
 }
 
 function startGame(obj) {
@@ -50,12 +59,15 @@ function startGame(obj) {
 
 function coordinates(obj) {
     objID = obj.id.split("_").pop();
-    y = objID / 3; y = Math.ceil(y);
-    x = objID - (y * 3); x += 3;
+    this.y = objID / 3; y = Math.ceil(y);
+    this.x = objID - (y * 3); x += 3;
 }
 
 function checkOccupied() {
-    if(rows[this.x] == "" && columns[this.y] == ""){
-        this.occupied = false;
+    if (grid[y - 1][x - 1] == "") {
+        occupied = false;
+    }
+    else {
+        occupied = true;
     }
 }

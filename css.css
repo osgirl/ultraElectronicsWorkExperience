@@ -1,11 +1,12 @@
 header{
-	background-color: lightseagreen;
+	background-color:  #00fbff;
 	height: 40px;
 	text-align: center;
 	font-family: Century Gothic;
+	color: #232323;	
 }
 body{
-	background-color: whitesmoke;
+	background-color:  #232323;
 }
 
 #div_1, #div_2, #div_3, #div_4, #div_5, #div_6, #div_7, #div_8, #div_9 {
@@ -16,7 +17,8 @@ body{
     width: 200px;
     height: 200px;
     margin: 10px;
-    border: 2px solid black;
+	border: 2px solid black;
+	background-color: #303030;
 }
 
 #container{
