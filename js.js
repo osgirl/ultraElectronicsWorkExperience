@@ -12,6 +12,7 @@ var grid = [
     [false, false, false]
 ]
 
+var winner;
 var occupied;
 var state;
 var gamecount = 0;
@@ -28,20 +29,15 @@ function onClick(obj) {
             this.state = noughtOrCross.cross;
 
             grid[y - 1][x - 1] = "o";
+            gameCount();
         }
         else {
             obj.innerHTML = "<img src='cross.png' height ='200px' width='200px'/>";
             this.state = noughtOrCross.nought;
 
             grid[y - 1][x - 1] = "x";
+            gameCount();
         }
-    }
-    else{
-        alert("Game is Over");
-    }
-    gamecount++;
-    if (gamecount >= 9) {
-        gameOver = true;
     }
 }
 
@@ -69,5 +65,17 @@ function checkOccupied() {
     }
     else {
         occupied = true;
+    }
+}
+
+function checkDownLeft() {
+    
+}
+
+function gameCount() {
+    gamecount++;
+    if (gamecount >= 9) {
+        gameOver = true;
+        alert("Ran out of space. Stalemate!");
     }
 }
