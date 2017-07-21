@@ -39,7 +39,11 @@
         </div>
     </div>
 
-    <button id="startButton" onclick="startGame(this)">Click to Start</button>
+    <div id="overlay" display="none" onclick="off()">
+        <div id="image" display="none"></div>
+    </div>
+
+    <button id="startButton" class="raise" onclick="startGame(this)">Click to Start</button>
     <p>
     </p>
 </body>
