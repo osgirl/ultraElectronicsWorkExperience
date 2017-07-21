@@ -29,15 +29,14 @@ function onClick(obj) {
             this.state = noughtOrCross.cross;
 
             grid[y - 1][x - 1] = "o";
-            gameCount();
         }
         else {
             obj.innerHTML = "<img src='cross.png' height ='200px' width='200px'/>";
             this.state = noughtOrCross.nought;
 
             grid[y - 1][x - 1] = "x";
-            gameCount();
         }
+        gameCount();
     }
 }
 
@@ -69,7 +68,9 @@ function checkOccupied() {
 }
 
 function checkDownLeft() {
-    
+    for(i = 0; i < 3; i ++){
+             
+    }
 }
 
 function gameCount() {
